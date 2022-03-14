@@ -50,7 +50,7 @@ const resolvers = {
           { $push: { books: { bookId, username: context.user.username } } },
           // { new: true, runValidators: true }
           { new: true }
-        );
+        ).populate("books");
 
         return updatedUser;
       }
